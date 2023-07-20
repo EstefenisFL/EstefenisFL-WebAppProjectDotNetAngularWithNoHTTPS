@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppAPINoHttps", "WebAppAPINoHttps\WebAppAPINoHttps.csproj", "{0C717653-6F92-46B1-95A3-3BD07BA067E3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29279216-3CDF-429A-B116-726ACC8766F8} = {29279216-3CDF-429A-B116-726ACC8766F8}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1Presentation", "1Presentation", "{2E49B6CA-A18C-4118-8012-3772E17EE3E7}"
 EndProject
@@ -19,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{80
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8C96CB80-29F8-41FC-AA1E-94A5BB28936C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWebData", "ProjectWebData\ProjectWebData.csproj", "{29279216-3CDF-429A-B116-726ACC8766F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectWebData", "ProjectWebData\ProjectWebData.csproj", "{29279216-3CDF-429A-B116-726ACC8766F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
