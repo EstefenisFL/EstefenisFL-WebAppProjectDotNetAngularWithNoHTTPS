@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public enum StatusPedidoEnum
+    public enum StatusPedido
     {
         Analise,
         Finalizado,

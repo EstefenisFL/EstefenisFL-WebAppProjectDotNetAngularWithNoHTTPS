@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public enum TipoProdutoEnum
+    public enum TipoProduto
     {
         MercadoriaParaVenda,
         Embalagem,

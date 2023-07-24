@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public enum TipoFreteEnum
+    public enum TipoFrete
     {
         CIF,
         FOB,
