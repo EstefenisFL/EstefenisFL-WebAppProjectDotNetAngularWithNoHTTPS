@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public enum StatusPedido
+    public enum ProductType
     {
-        Analise,
-        Finalizado,
-        Entregue,
+        MercadoriaParaVenda,
+        Embalagem,
+        Servico,
     }
 }

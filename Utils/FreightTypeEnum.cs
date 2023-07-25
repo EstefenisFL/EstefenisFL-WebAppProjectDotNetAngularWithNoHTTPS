@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public enum TipoProduto
+    public enum FreightType
     {
-        MercadoriaParaVenda,
-        Embalagem,
-        Servico,
+        CIF,
+        FOB,
+        SemFrete,
     }
 }

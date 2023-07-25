@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Cliente
+    public class Client
     {
         public int Id {get; set; }
-        public string? Nome { get; set; }
-        public string? Telefone { get; set; }
+        public string? Name { get; set; }
+        public string? PhoneNumber { get; set; }
         public string? CEP {get; set; }
-        public string? Estado { get; set; }
-        public string? Cidade { get; set; }
+        public string? State { get; set; }
+        public string? City { get; set; }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Utils
 {
-    public enum TipoFrete
+    public enum OrderStatus
     {
-        CIF,
-        FOB,
-        SemFrete,
+        Analise,
+        Finalizado,
+        Entregue,
     }
 }
