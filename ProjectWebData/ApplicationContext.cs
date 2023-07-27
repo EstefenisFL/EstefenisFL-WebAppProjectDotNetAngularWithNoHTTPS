@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design.Internal;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,9 @@ namespace ProjectWebData
             //setar string hard coded
             //optionsBuilder.UseSqlServer("Data Source=DESKTOP-3E8SV0G\\SQLEXPRESS; Initial Catalog=WebApplicationDataBaseForStudy; Trusted_Connection = True;");
             //ou
-            //prover connection string do arquivo appsettings.json(obs:instalar pacotes necessários)
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("SQLServerDatabase"));
+            //prover connection string do arquivo appsettings.json(obs:instalar pacotes necessários) com resiliência 
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("SQLServerDatabase"),
+                options => options.EnableRetryOnFailure());
 
         }
 
