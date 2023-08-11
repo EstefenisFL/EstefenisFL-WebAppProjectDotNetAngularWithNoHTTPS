@@ -24,15 +24,15 @@ namespace ProjectWebData
                 .Build();
             base.OnConfiguring(optionsBuilder);
             //<===== Quando a aplicação estiver em um servidor ====>
-            //optionBuilder.UseSqlServer("Server = DESKTOP-3E8SV0G\\SQLEXPRESS; Database = WebApplicationDataBaseForStudy; Trusted_Connection = True;");
+            optionsBuilder.UseSqlServer("Server = DESKTOP-3E8SV0G\\SQLEXPRESS; Database = WebApplicationDataBaseForStudy; Trusted_Connection = True; TrustServerCertificate=True;");
 
             //<===== Quando a aplicação rodar local ====>
             //setar string hard coded
-            //optionsBuilder.UseSqlServer("Data Source=DESKTOP-3E8SV0G\\SQLEXPRESS; Initial Catalog=WebApplicationDataBaseForStudy; Trusted_Connection = True;");
+            //optionsBuilder.UseSqlServer("Data Source=DESKTOP-3E8SV0G\\SQLEXPRESS; Initial Catalog=WebApplicationDataBaseForStudy; Trusted_Connection = True; TrustServerCertificate=True;");
             //ou
             //prover connection string do arquivo appsettings.json(obs:instalar pacotes necessários) com resiliência 
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("SQLServerDatabase"),
-                options => options.EnableRetryOnFailure());
+            //optionsBuilder.UseSqlServer(configuration.GetConnectionString("SQLServerDatabase"),
+            //    options => options.EnableRetryOnFailure());
 
         }
 
