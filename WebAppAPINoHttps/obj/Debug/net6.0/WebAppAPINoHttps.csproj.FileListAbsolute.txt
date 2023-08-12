@@ -335,3 +335,8 @@ C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\b
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\Services.deps.json
+C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\Services.runtimeconfig.json
+C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\Services.exe
+C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\Services.dll
+C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\WebAppAPINoHttps\bin\Debug\net6.0\Services.pdb

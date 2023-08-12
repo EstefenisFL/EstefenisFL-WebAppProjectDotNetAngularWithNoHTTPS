@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAppAPINoHttps", "WebAppAPINoHttps\WebAppAPINoHttps.csproj", "{0C717653-6F92-46B1-95A3-3BD07BA067E3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{29279216-3CDF-429A-B116-726ACC8766F8} = {29279216-3CDF-429A-B116-726ACC8766F8}
+		{8F5AD7C1-A22F-4114-ADAD-E9E746A91A06} = {8F5AD7C1-A22F-4114-ADAD-E9E746A91A06}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Presentation", "1 Presentation", "{2E49B6CA-A18C-4118-8012-3772E17EE3E7}"
@@ -34,6 +35,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{77B822A4-8D5C-420B-9C93-EF98D51BABCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 Tests", "5 Tests", "{287311E1-0209-45D0-AF9D-B0100363C005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -34,8 +34,4 @@
 		<ProjectReference Include="..\Utils\Utils.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Repositories\" />
-	</ItemGroup>
-
 </Project>

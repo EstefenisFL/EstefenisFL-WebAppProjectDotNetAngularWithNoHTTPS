@@ -4427,6 +4427,19 @@
           "bin/placeholder/ProjectWebData.dll": {}
         }
       },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ProjectWebData": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
+      },
       "Utils/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -12587,6 +12600,11 @@
       "path": "../ProjectWebData/ProjectWebData.csproj",
       "msbuildProject": "../ProjectWebData/ProjectWebData.csproj"
     },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
+    },
     "Utils/1.0.0": {
       "type": "project",
       "path": "../Utils/Utils.csproj",
@@ -12597,6 +12615,7 @@
     "net6.0": [
       "AutoMapper >= 12.0.1",
       "Dapper >= 2.0.143",
+      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.0",
@@ -12608,6 +12627,7 @@
       "Newtonsoft.Json >= 13.0.3",
       "Newtonsoft.Json.Bson >= 1.0.2",
       "ProjectWebData >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -12645,8 +12665,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj"
+            },
             "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj": {
               "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj"
+            },
+            "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj"
             }
           }
         }
