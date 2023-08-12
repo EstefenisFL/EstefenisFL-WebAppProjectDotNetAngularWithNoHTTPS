@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectWebData
+namespace ProjectWebData.DbContexts
 {
     public class ApplicationContext : DbContext
     {
