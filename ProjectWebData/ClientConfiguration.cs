@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace ProjectWebData
 {
-    public class ClientConfiguration : IEntityTypeConfiguration<Client>
+    public class ClientConfiguration : IEntityTypeConfiguration<ClientDTO>
     {
-        public void Configure(EntityTypeBuilder<Client> builder)
+        public void Configure(EntityTypeBuilder<ClientDTO> builder)
         {
             builder.ToTable("Clientes");
             builder.HasKey(p => p.Id);

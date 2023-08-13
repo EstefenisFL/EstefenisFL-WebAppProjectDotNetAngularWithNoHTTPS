@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace ProjectWebData
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductConfiguration : IEntityTypeConfiguration<ProductDTO>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<ProductDTO> builder)
         {
             builder.ToTable("Produtos");
             builder.HasKey(p => p.Id);

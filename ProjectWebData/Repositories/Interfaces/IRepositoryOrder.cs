@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectWebData.Repositories.Interfaces
 {
-    public interface IRepositoryOrder : IRepositoryBase<Order>
+    public interface IRepositoryOrder : IRepositoryBase<OrderDTO>
     {
     }
 }

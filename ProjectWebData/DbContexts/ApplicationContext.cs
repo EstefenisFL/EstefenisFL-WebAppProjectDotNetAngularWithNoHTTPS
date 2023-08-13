@@ -14,7 +14,11 @@ namespace ProjectWebData.DbContexts
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<Order> Pedidos { get; set; }
+        public DbSet<OrderDTO> Pedidos { get; set; }
+
+        public DbSet<ClientDTO> Clients { get; set; }
+
+        public DbSet<ProductDTO> Items { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

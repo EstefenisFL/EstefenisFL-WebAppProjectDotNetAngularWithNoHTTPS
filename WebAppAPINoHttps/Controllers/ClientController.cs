@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Mvc;
+using Services.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +10,19 @@ namespace WebAppAPINoHttps.Controllers
     [ApiController]
     public class ClientController : ControllerBase
     {
+        private readonly ILogger<ClientController> _logger;
+        private readonly IClientService _clientService;
+
+        public ClientController(ILogger<ClientController> logger, IClientService clientService)
+        {
+            _logger = logger;
+            _clientService = clientService;
+        }
         // GET: api/<APIValuesController1>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<ClientDTO> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _clientService.FindClients();
         }
 
         // GET api/<APIValuesController1>/5
@@ -24,8 +34,9 @@ namespace WebAppAPINoHttps.Controllers
 
         // POST api/<APIValuesController1>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] ClientDTO newClient)
         {
+            _clientService.AddClient(newClient);
         }
 
         // PUT api/<APIValuesController1>/5
