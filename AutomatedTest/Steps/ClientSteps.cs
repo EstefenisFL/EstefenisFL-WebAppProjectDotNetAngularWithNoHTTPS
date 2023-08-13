@@ -12,6 +12,6 @@ namespace AutomatedTest.Steps
     {
         public ClientSteps() { }
 
-        []
+        [When(@"the retrieval is done")]
     }
 }
