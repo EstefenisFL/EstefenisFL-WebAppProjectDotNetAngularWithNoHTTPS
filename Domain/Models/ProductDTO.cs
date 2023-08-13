@@ -7,7 +7,7 @@ using Utils;
 
 namespace Domain.Models
 {
-    public class Product
+    public class ProductDTO
     {
         public int Id { get; set; }
         public string? BarCode { get; set; }

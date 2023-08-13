@@ -8,10 +8,10 @@ namespace Services.Interfaces
 {
     public interface IServiceBase<T> where T : class
     {
-        public void Add(T obj);
-        public T GetById(int id);
-        public  IEnumerable<T> GetAll();
-        public  void Update(T obj);
-        public  void Remove(T obj);
+        void Add(T obj);
+        T GetById(int id);
+        IEnumerable<T> GetAll();
+        void Update(T obj);
+        void Remove(T obj);
     }
 }

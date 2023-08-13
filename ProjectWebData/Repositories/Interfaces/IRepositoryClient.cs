@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace ProjectWebData.Repositories.Interfaces
 {
-    public interface IRepositoryClient : IRepositoryBase<Client>
+    public interface IRepositoryClient : IRepositoryBase<ClientDTO>
     {
+        IEnumerable<ClientDTO> GetAllClients();
+        void AddClient(ClientDTO newClient);
     }
 }
