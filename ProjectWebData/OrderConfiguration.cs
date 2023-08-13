@@ -10,9 +10,9 @@ using Domain.Models;
 
 namespace ProjectWebData
 {
-    public class OrderConfiguration : IEntityTypeConfiguration<Order>
+    public class OrderConfiguration : IEntityTypeConfiguration<OrderDTO>
     {
-        public void Configure(EntityTypeBuilder<Order> builder)
+        public void Configure(EntityTypeBuilder<OrderDTO> builder)
         {
             builder.ToTable("Pedidos");
             builder.HasKey(p => p.Id);

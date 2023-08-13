@@ -1,3 +1,8 @@
+using ProjectWebData.DbContexts;
+using ProjectWebData.Repositories;
+using ProjectWebData.Repositories.Interfaces;
+using Services.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,6 +19,11 @@ builder.Services.AddCors((setup) =>
         options.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
     });
 });
+
+builder.Services.AddSingleton<ApplicationContext>();
+builder.Services.AddSingleton<IClientService, ClientService>();
+builder.Services.AddSingleton<IRepositoryClient, RepositoryClient>();
+
 
 var app = builder.Build();
 
