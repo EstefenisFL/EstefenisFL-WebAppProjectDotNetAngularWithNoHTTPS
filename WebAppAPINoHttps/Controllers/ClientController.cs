@@ -18,34 +18,34 @@ namespace WebAppAPINoHttps.Controllers
             _logger = logger;
             _clientService = clientService;
         }
-        // GET: api/<APIValuesController1>
+        // GET: api/Client
         [HttpGet]
         public IEnumerable<ClientDTO> Get()
         {
             return _clientService.FindClients();
         }
 
-        // GET api/<APIValuesController1>/5
+        // GET api/Client/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<APIValuesController1>
+        // POST api/Client
         [HttpPost]
         public void Post([FromBody] ClientDTO newClient)
         {
             _clientService.AddClient(newClient);
         }
 
-        // PUT api/<APIValuesController1>/5
+        // PUT api/Client/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<APIValuesController1>/5
+        // DELETE api/Client/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

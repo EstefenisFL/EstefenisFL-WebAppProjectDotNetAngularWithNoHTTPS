@@ -1,0 +1,26 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Estêfenis",
+    "phoneNumber": "85996706567",
+    "cep": "60822230",
+    "state": "Ceará",
+    "city": "Brasil"
+  },
+  {
+    "id": 2,
+    "name": "Maria",
+    "phoneNumber": "85996706566",
+    "cep": "60820240",
+    "state": "Ceará",
+    "city": "Brasil"
+  },
+  {
+    "id": 3,
+    "name": "Pedro",
+    "phoneNumber": "85996786567",
+    "cep": "60820220",
+    "state": "Ceará",
+    "city": "Brasil"
+  }
+]

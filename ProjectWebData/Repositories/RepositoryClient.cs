@@ -14,9 +14,11 @@ namespace ProjectWebData.Repositories
     public class RepositoryClient : RepositoryBase<ClientDTO>, IRepositoryClient
     {
         private readonly ApplicationContext _context;
-        public RepositoryClient(ApplicationContext context) : base(context)
+        private readonly SQLiteContextTests _contextTest;
+        public RepositoryClient(ApplicationContext context, SQLiteContextTests contextTest) : base(context)
         {
-               _context = context;
+            _context = context;
+            _contextTest = contextTest;
         }
         public virtual void AddClient(ClientDTO obj)
         {
@@ -32,52 +34,30 @@ namespace ProjectWebData.Repositories
                 throw ex;
             }
         }
-
-        public virtual ClientDTO GetById(int id)
-        {
-            return _context.Set<ClientDTO>().Find(id);
-        }
-
         public virtual IEnumerable<ClientDTO> GetAllClients()
         {
-            return _context.Set<ClientDTO>().ToList();
+            var clients = _contextTest.GetDataBase();
+            if (_contextTest.Set<ClientDTO>().ToList().Count == 0)
+            {                
+                AddDataInContext(clients);
+            }
+            else
+            {
+                RemoveDataInContext(clients);
+            }
+            //return _context.Set<ClientDTO>().ToList();
+            return _contextTest.Set<ClientDTO>().ToList();
         }
 
-        public virtual void Update(ClientDTO obj)
+        public void AddDataInContext (List<ClientDTO> clients)
         {
-
-            try
-            {
-                _context.Entry(obj).State = EntityState.Modified;
-                _context.SaveChanges();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-
+            _contextTest.AddRange(clients);
+            _contextTest.SaveChanges();
         }
-
-        public virtual void Remove(ClientDTO obj)
+        public void RemoveDataInContext(List<ClientDTO> clients)
         {
-            try
-            {
-                _context.Set<ClientDTO>().Remove(obj);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public virtual void Dispose()
-        {
-            _context.Dispose();
+            _contextTest.RemoveRange(clients);
+            _contextTest.SaveChanges();
         }
     }
 }

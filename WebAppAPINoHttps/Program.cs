@@ -21,6 +21,7 @@ builder.Services.AddCors((setup) =>
 });
 
 builder.Services.AddSingleton<ApplicationContext>();
+builder.Services.AddSingleton<SQLiteContextTests>();
 builder.Services.AddSingleton<IClientService, ClientService>();
 builder.Services.AddSingleton<IRepositoryClient, RepositoryClient>();
 
