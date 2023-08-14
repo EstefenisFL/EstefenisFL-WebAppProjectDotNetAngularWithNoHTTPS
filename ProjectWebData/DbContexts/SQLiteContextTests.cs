@@ -26,6 +26,7 @@ namespace ProjectWebData.DbContexts
 
         public List<ClientDTO> GetDataBase()
         {
+            //lembre-se de alterar o caminho do arquivo...
             var json = File.ReadAllText("C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\DbContexts\\Base.json");
             var database = JsonConvert.DeserializeObject<List<ClientDTO>>(json);
             return database;
