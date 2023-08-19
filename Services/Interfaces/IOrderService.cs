@@ -15,10 +15,6 @@ namespace Services.Services
 
         IEnumerable<OrderDTO> FindAllOrders();
 
-        void Update(OrderDTO obj);
-
-        void Remove(OrderDTO obj);
-
         void Dispose();
     }
 }

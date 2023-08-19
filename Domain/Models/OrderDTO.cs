@@ -17,6 +17,6 @@ namespace Domain.Models
         public FreightType FreightType { get; set; }
         public OrderStatus Status { get; set; }
         public string? Note { get; set; }
-        public ICollection<OrderItemDTO>? Itens { get; set; }
+        public ICollection<ItemDTO>? Itens { get; set; }
     }
 }

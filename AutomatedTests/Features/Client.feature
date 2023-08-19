@@ -4,8 +4,14 @@ Feature: Client
 
 @CreateClients
 Scenario: CreateCLients
-	When going to bring data from DB
-	Then verify if number of records is <ResultCount>
+	Given I want to create new client with <Name>
+	And the phoneNumber is <PhoneNumber>
+	And the cep is <CEP>
+	And the registrationNumber is <RegistrationNumber>
+	And the state is <state>
+	And the city is <city>
+	When the object for newClient was created
+	Then I verify if the status code for this operation request is: 200
 
 Examples:
 	| Name      | PhoneNumber | CEP      | RegistrationNumber | state | city              |
@@ -24,28 +30,28 @@ Examples:
 	| 3           |
 
 
-@UpdateClients
-Scenario: UpdateClients
-	Given 
-	When 
-	Then 
-
-Examples:
-
-	| Name      | PhoneNumber | CEP      |
-	| Estêfenis | 85999665587 | 60822001 |
-	| Maria     | 85999999905 | 60822002 |
-	| Pedro     | 85998989865 | 60822003 |
-
-@DeleteClients
-Scenario: DeleteClients
-	Given 
-	When 
-	Then 
-
-Examples:
-
-	| RegistrationNumber |
-	| 86487197041        |
-	| 71038696003        |
-	| 12815644002        |
+#@UpdateClients
+#Scenario: UpdateClients
+#	Given 
+#	When 
+#	Then 
+#
+#Examples:
+#
+#	| Name      | PhoneNumber | CEP      |
+#	| Estêfenis | 85999665587 | 60822001 |
+#	| Maria     | 85999999905 | 60822002 |
+#	| Pedro     | 85998989865 | 60822003 |
+#
+#@DeleteClients
+#Scenario: DeleteClients
+#	Given 
+#	When 
+#	Then 
+#
+#Examples:
+#
+#	| RegistrationNumber |
+#	| 86487197041        |
+#	| 71038696003        |
+#	| 12815644002        |

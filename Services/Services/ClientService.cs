@@ -16,7 +16,7 @@ namespace Services.Services
         {
             _repositoryClient = repositoryClient;
         }
-        
+
         public void AddClient(ClientDTO newClient)
         {
             _repositoryClient.AddClient(newClient);

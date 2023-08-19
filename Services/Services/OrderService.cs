@@ -28,15 +28,5 @@ namespace Services.Services
         {
             return _repositoryOrder.GetAllOrders();
         }
-        override
-        public void Update(OrderDTO obj)
-        {
-            _repositoryOrder.Update(obj);
-        }
-        override
-        public void Remove(OrderDTO obj)
-        {
-            _repositoryOrder.Remove(obj);
-        }
     }
 }

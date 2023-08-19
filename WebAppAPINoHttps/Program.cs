@@ -13,6 +13,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
 builder.Services.AddDbContext<ApplicationContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerDatabase"), providerOptions => providerOptions.EnableRetryOnFailure()));
 
@@ -28,6 +29,8 @@ builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<IRepositoryClient, RepositoryClient>();
+builder.Services.AddScoped<IRepositoryOrder, RepositoryOrder>();
+builder.Services.AddScoped<IRepositoryItem, RepositoryItem>();
 builder.Services.AddScoped<ApplicationContext>();
 builder.Services.AddSingleton<SQLiteContextTests>();
 
