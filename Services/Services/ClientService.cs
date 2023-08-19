@@ -26,7 +26,7 @@ namespace Services.Services
         {
             return _repositoryClient.GetById(id);
         }
-        public IEnumerable<ClientDTO> FindClients()
+        public IEnumerable<ClientDTO> FindAllClients()
         {
             return _repositoryClient.GetAllClients();
         }

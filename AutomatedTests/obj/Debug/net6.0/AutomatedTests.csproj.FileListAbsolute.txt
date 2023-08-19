@@ -14,9 +14,6 @@ C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\Utils.runtimeconfig.json
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\Utils.exe
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\Domain.exe
-C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\ProjectWebData.deps.json
-C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\ProjectWebData.runtimeconfig.json
-C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\ProjectWebData.exe
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\Services.deps.json
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\Services.runtimeconfig.json
 C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\bin\Debug\net6.0\Services.exe

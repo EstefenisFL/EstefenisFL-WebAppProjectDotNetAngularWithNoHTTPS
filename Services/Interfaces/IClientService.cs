@@ -14,7 +14,7 @@ namespace Services.Services
 
         ClientDTO GetById(int id);
 
-        IEnumerable<ClientDTO> FindClients();
+        IEnumerable<ClientDTO> FindAllClients();
 
         void Update(ClientDTO obj);
 

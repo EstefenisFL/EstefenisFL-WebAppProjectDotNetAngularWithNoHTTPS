@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Razor.Language;
+using Microsoft.EntityFrameworkCore;
 using ProjectWebData.DbContexts;
 using ProjectWebData.Repositories;
 using ProjectWebData.Repositories.Interfaces;
@@ -11,6 +13,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<ApplicationContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerDatabase"), providerOptions => providerOptions.EnableRetryOnFailure()));
 
 builder.Services.AddCors((setup) =>
 {
@@ -20,10 +24,12 @@ builder.Services.AddCors((setup) =>
     });
 });
 
-builder.Services.AddSingleton<ApplicationContext>();
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<IRepositoryClient, RepositoryClient>();
+builder.Services.AddScoped<ApplicationContext>();
 builder.Services.AddSingleton<SQLiteContextTests>();
-builder.Services.AddSingleton<IClientService, ClientService>();
-builder.Services.AddSingleton<IRepositoryClient, RepositoryClient>();
 
 
 var app = builder.Build();

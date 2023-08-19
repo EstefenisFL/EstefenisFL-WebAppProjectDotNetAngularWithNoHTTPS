@@ -18,27 +18,22 @@ namespace ProjectWebData.DbContexts
 
         public DbSet<ClientDTO> Clients { get; set; }
 
-        public DbSet<ProductDTO> Items { get; set; }
+        public DbSet<ItemDTO> Items { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //Usar esse construtor quando for obter a connection string diretamente pelo configuring do program lendo appsettings
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
-            base.OnConfiguring(optionsBuilder);
-            //<===== Quando a aplicação estiver em um servidor ====>
-            optionsBuilder.UseSqlServer("Server = DESKTOP-3E8SV0G\\SQLEXPRESS; Database = WebApplicationDataBaseForStudy; Trusted_Connection = True; TrustServerCertificate=True;");
-
-            //<===== Quando a aplicação rodar local ====>
-            //setar string hard coded
-            //optionsBuilder.UseSqlServer("Data Source=DESKTOP-3E8SV0G\\SQLEXPRESS; Initial Catalog=WebApplicationDataBaseForStudy; Trusted_Connection = True; TrustServerCertificate=True;");
-            //ou
-            //prover connection string do arquivo appsettings.json(obs:instalar pacotes necessários) com resiliência 
-            //optionsBuilder.UseSqlServer(configuration.GetConnectionString("SQLServerDatabase"),
-            //    options => options.EnableRetryOnFailure());
-
         }
+        //<========Usar o método abaixo OnConfiguring apenas quando não prover a connection string diretamente pelo appsettings no program ou para add migrations============>
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //<===== Quando a aplicação estiver em um servidor ====>
+        //    //optionsBuilder.UseSqlServer("Server = DESKTOP-3E8SV0G\\SQLEXPRESS; Database = WebApplicationDataBaseForStudy; Trusted_Connection = True; TrustServerCertificate=True;");
+
+        //    //<===== Quando a aplicação rodar local ====>
+        //    //setar string hard coded
+        //    optionsBuilder.UseSqlServer("Data Source=DESKTOP-3E8SV0G\\SQLEXPRESS; Initial Catalog=WebApplicationDataBaseForStudy; Trusted_Connection = True; TrustServerCertificate=True;");
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

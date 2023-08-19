@@ -20,16 +20,16 @@ namespace WebAppAPINoHttps.Controllers
         }
         // GET: api/Client
         [HttpGet]
-        public IEnumerable<ClientDTO> Get()
+        public IEnumerable<ClientDTO> GetAll()
         {
-            return _clientService.FindClients();
+            return _clientService.FindAllClients();
         }
 
         // GET api/Client/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ClientDTO Get(int id)
         {
-            return "value";
+            return _clientService.GetById(id);
         }
 
         // POST api/Client

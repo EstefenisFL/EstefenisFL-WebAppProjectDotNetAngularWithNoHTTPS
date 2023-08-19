@@ -2,25 +2,28 @@
   {
     "id": 1,
     "name": "Estêfenis",
+    "RegistrationNumber": "86487197041",
     "phoneNumber": "85996706567",
     "cep": "60822230",
     "state": "Ceará",
-    "city": "Brasil"
+    "city": "Fortaleza"
   },
   {
     "id": 2,
     "name": "Maria",
+    "RegistrationNumber": "71038696003",
     "phoneNumber": "85996706566",
     "cep": "60820240",
     "state": "Ceará",
-    "city": "Brasil"
+    "city": "Canindé"
   },
   {
     "id": 3,
     "name": "Pedro",
+    "RegistrationNumber": "12815644002",
     "phoneNumber": "85996786567",
     "cep": "60820220",
     "state": "Ceará",
-    "city": "Brasil"
+    "city": "Porto de Galinhas"
   }
 ]
