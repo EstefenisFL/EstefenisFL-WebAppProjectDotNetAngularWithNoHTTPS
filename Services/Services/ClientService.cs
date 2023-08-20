@@ -34,11 +34,11 @@ namespace Services.Services
         public void Update(ClientDTO obj)
         {
             _repositoryClient.Update(obj);
-        }
-        override
-        public void Remove(ClientDTO obj)
+        }        
+        public void RemoveClient(int id)
         {
-            _repositoryClient.Remove(obj);
+            var client = _repositoryClient.GetById(id);
+            _repositoryClient.Remove(client);
         }
         public void RemoveForTestsAUT()
         {

@@ -18,7 +18,7 @@ namespace Services.Services
 
         void Update(ClientDTO obj);
 
-        void Remove(ClientDTO obj);
+        void RemoveClient(int id);
 
         void RemoveForTestsAUT();
 

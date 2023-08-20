@@ -18,7 +18,7 @@ namespace AutomatedTest.Steps
     [Binding]
     public class ClientSteps : BaseSteps
     {
-        private const string ACCESS_API_ENDPOINT = "/api/Client";
+        private const string ACCESS_API_ENDPOINT = "/api/AutomatedTests";
         public int COUNT;
         private HttpResponseMessage RESPONSE;
         public ClientDTO NEWCLIENT = new ClientDTO();
@@ -52,7 +52,7 @@ namespace AutomatedTest.Steps
         [Given("the city is (.*)")]
         public void GivenIWantToCreateNewClientWithCity(string city)
         {
-            NEWCLIENT.Name = city;
+            NEWCLIENT.City = city;
         }
 
         [When(@"the object for newClient was created")]

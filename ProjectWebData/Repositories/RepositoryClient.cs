@@ -30,7 +30,7 @@ namespace ProjectWebData.Repositories
                     if (countInMemoryDataBase.Count() < 3)
                     {
                         AddClientForTestsAUT(obj);
-                    }
+                    }                    
                 }
                 else
                 {

@@ -47,8 +47,9 @@ namespace WebAppAPINoHttps.Controllers
 
         // DELETE api/Client/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void DeleteClient(int id)
         {
+            _clientService.RemoveClient(id);
         }
     }
 }

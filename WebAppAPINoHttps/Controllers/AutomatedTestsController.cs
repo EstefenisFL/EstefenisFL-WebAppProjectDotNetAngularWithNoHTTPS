@@ -36,6 +36,8 @@ namespace WebAppAPINoHttps.Controllers
         [HttpPost]
         public void Post([FromBody] ClientDTO newClient)
         {
+            var optionForTestAUT = 2;
+            newClient.Option = optionForTestAUT;
             _clientService.AddClient(newClient);
         }
 
