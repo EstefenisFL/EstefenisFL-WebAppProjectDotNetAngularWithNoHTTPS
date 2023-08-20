@@ -12,6 +12,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using System.Net;
 using static System.Net.Mime.MediaTypeNames;
+using System.Runtime.ConstrainedExecution;
 
 namespace AutomatedTest.Steps
 {
@@ -20,8 +21,9 @@ namespace AutomatedTest.Steps
     {
         private const string ACCESS_API_ENDPOINT = "/api/AutomatedTests";
         public int COUNT;
-        private HttpResponseMessage RESPONSE;
+        private HttpResponseMessage RESPONSE = new HttpResponseMessage();
         public ClientDTO NEWCLIENT = new ClientDTO();
+        public ClientDTO CLIENTFORUPDATEREMOVE = new ClientDTO();
         public ClientSteps() { }
 
         [Given("I want to create new client with (.*)")]
@@ -85,15 +87,70 @@ namespace AutomatedTest.Steps
                 if (clientRecord != null)
                 {
                     result.AddRange(clientRecord);
+                    NEWCLIENT = result.ElementAt(0);
                 }
                 COUNT = result.Count();
             }
         }
 
         [Then(@"verify if number of records is (.*)")]
-        public void thenverifythenumberofrecords(int result)
+        public void ThenVerifyTheNumberOfRecords(int result)
         {
             COUNT.Should().Be(result);
+        }
+
+        [Given("I want to update a client")]
+        public void GivenIWantToUpdateASpecificClient()
+        {
+            CLIENTFORUPDATEREMOVE = NEWCLIENT;
+        }
+        [Given("the phoneNumber for update is (.*)")]
+        public void GivenIWantToUpdateClientWithNewPhoneNumber(string phoneNumber)
+        {
+            CLIENTFORUPDATEREMOVE.PhoneNumber = phoneNumber;
+        }
+        [Given("the cep for update is (.*)")]
+        public void GivenIWantToUpdateClientWithNewCep(string cep)
+        {
+            CLIENTFORUPDATEREMOVE.CEP = cep;
+        }
+        [When(@"the values for update Client  was catched")]
+        public async Task WhenTheValuesToUpdatedWasCatched()
+        {
+
+            string uriFull = $"{string.Concat(HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT)}/{CLIENTFORUPDATEREMOVE.Id}";
+            var requestMessage = new HttpRequestMessage(HttpMethod.Put, uriFull);
+            requestMessage.Content = new StringContent(JsonConvert.SerializeObject(NEWCLIENT), Encoding.UTF8, Application.Json);
+            requestMessage.Headers.Add("Accept", "application/json");
+            var response = await _httpClient.SendAsync(requestMessage);
+            if (response.IsSuccessStatusCode)
+            {
+                RESPONSE = response;
+            }
+        }
+
+        [Then(@"I verify if the status code for update operation request is: (.*)")]
+        public void ThenVerifyTheUpdatedStatusCode(HttpStatusCode statusCode)
+        {
+            statusCode.Should().Be(RESPONSE.StatusCode);
+        }
+        [Given("I want to delete a specific client")]
+        public async Task GivenIWantToDeleteClientWithNewCep()
+        {
+            string uriFull = $"{string.Concat(HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT)}/{CLIENTFORUPDATEREMOVE.Id}";
+            var requestMessage = new HttpRequestMessage(HttpMethod.Delete, uriFull);
+            requestMessage.Headers.Add("Accept", "application/json");
+            var response = await _httpClient.SendAsync(requestMessage);
+            if (response.IsSuccessStatusCode)
+            {
+                RESPONSE = response;
+            }
+        }
+
+        [Then(@"I verify if the status code for delete operation request is: (.*)")]
+        public void ThenVerifyTheDeleteStatusCode(HttpStatusCode statusCode)
+        {
+            statusCode.Should().Be(RESPONSE.StatusCode);
         }
     }
 }

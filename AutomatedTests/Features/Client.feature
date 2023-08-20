@@ -30,28 +30,20 @@ Examples:
 	| 3           |
 
 
-#@UpdateClients
-#Scenario: UpdateClients
-#	Given 
-#	When 
-#	Then 
-#
-#Examples:
-#
-#	| Name      | PhoneNumber | CEP      |
-#	| Estêfenis | 85999665587 | 60822001 |
-#	| Maria     | 85999999905 | 60822002 |
-#	| Pedro     | 85998989865 | 60822003 |
-#
-#@DeleteClients
-#Scenario: DeleteClients
-#	Given 
-#	When 
-#	Then 
-#
-#Examples:
-#
-#	| RegistrationNumber |
-#	| 86487197041        |
-#	| 71038696003        |
-#	| 12815644002        |
+@UpdateClient
+Scenario: UpdateClient
+	Given I want to update a client
+	And the phoneNumber for update is <PhoneNumber>
+	And the cep for update is <CEP>
+	When the values for update Client  was catched
+	Then I verify if the status code for update operation request is: 200 
+
+Examples:
+
+	| PhoneNumber | CEP      |
+	| 85999665587 | 60822001 |
+
+@Deleteclient
+Scenario: Deleteclient
+	Given I want to delete a specific client
+	Then I verify if the status code for delete operation request is: 200

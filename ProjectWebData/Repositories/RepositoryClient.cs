@@ -30,7 +30,7 @@ namespace ProjectWebData.Repositories
                     if (countInMemoryDataBase.Count() < 3)
                     {
                         AddClientForTestsAUT(obj);
-                    }                    
+                    }
                 }
                 else
                 {
@@ -54,7 +54,6 @@ namespace ProjectWebData.Repositories
             {
                 return countInMemoryDataBase;
             }
-
         }
 
         //<===========Usar _contextTest apenas para testes automatizados===========>
@@ -71,14 +70,26 @@ namespace ProjectWebData.Repositories
             _contextTest.Add(newClientEntity);
             _contextTest.SaveChanges();
         }
-        public void RemoveClientForTestsAUT()
+        public void RemoveClientForTestsAUT(int id)
         {
             var listOfClients = _contextTest.Set<ClientDTO>().ToList();
             if (listOfClients.Count() != 0)
             {
-                _contextTest.RemoveRange();
-                _contextTest.SaveChanges();
+                foreach (ClientDTO client in listOfClients)
+                {
+                    if (client.Id == id)
+                    {
+                        _contextTest.Remove(client);
+                        _contextTest.SaveChanges();
+                    }
+                }
+
             }
+        }
+        public void UpdateForTestAUT(ClientDTO obj)
+        {
+            _contextTest.Update(obj);
+            _contextTest.SaveChanges();
         }
     }
 }

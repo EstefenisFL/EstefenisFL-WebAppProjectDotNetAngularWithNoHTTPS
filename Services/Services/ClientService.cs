@@ -34,15 +34,20 @@ namespace Services.Services
         public void Update(ClientDTO obj)
         {
             _repositoryClient.Update(obj);
+        }
+
+        public void UpdateForTestsAUT(ClientDTO obj)
+        {
+            _repositoryClient.UpdateForTestAUT(obj);
         }        
         public void RemoveClient(int id)
         {
             var client = _repositoryClient.GetById(id);
             _repositoryClient.Remove(client);
         }
-        public void RemoveForTestsAUT()
+        public void RemoveForTestsAUT(int id)
         {
-            _repositoryClient.RemoveClientForTestsAUT();
+            _repositoryClient.RemoveClientForTestsAUT(id);
         }
     }
 }

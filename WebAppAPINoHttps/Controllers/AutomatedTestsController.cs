@@ -25,7 +25,7 @@ namespace WebAppAPINoHttps.Controllers
             return _clientService.FindAllClients();
         }
 
-        // GET api/AutomatedTests/5
+        // GET api/AutomatedTests/id
         [HttpGet("{id}")]
         public ClientDTO Get(int id)
         {
@@ -41,17 +41,18 @@ namespace WebAppAPINoHttps.Controllers
             _clientService.AddClient(newClient);
         }
 
-        // PUT api/Client/5
-        [HttpPut("{registrationNumber}")]
-        public void Put(string registrationNumber, [FromBody] string value)
+        // PUT api/AutomatedTests/id
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] ClientDTO clienToUpdate)
         {
+            _clientService.UpdateForTestsAUT(clienToUpdate);
         }
 
-        // DELETE api/AutomatedTests/5
-        [HttpDelete()]
-        public void Delete()
+        // DELETE api/AutomatedTests/id
+        [HttpDelete("{id}")]
+        public void Delete(int id)
         {
-            _clientService.RemoveForTestsAUT();
+            _clientService.RemoveForTestsAUT(id);
         }
     }
 }
