@@ -28,9 +28,15 @@ namespace WebAppAPINoHttps.Controllers
 
         // GET api/Order/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public OrderDTO Get(int id)
         {
-            return "value";
+            return _orderService.GetById(id);
+        }
+        // POST api/Order
+        [HttpPost]
+        public void CreateOrder([FromBody] OrderDTO order) 
+        { 
+           _orderService.AddOrder(order);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Mvc;
+using Services.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +10,46 @@ namespace WebAppAPINoHttps.Controllers
     [ApiController]
     public class AutomatedTestsController : ControllerBase
     {
-        // GET: api/<AutomatedTestsController>
+        private readonly ILogger<ClientController> _logger;
+        private readonly IClientService _clientService;
+
+        public AutomatedTestsController(ILogger<ClientController> logger, IClientService clientService)
+        {
+            _logger = logger;
+            _clientService = clientService;
+        }
+        // GET: api/AutomatedTests
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<ClientDTO> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            return _clientService.FindAllClients();
         }
 
-        // GET api/<AutomatedTestsController>/5
+        // GET api/AutomatedTests/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ClientDTO Get(int id)
         {
-            return "value";
+            return _clientService.GetById(id);
         }
 
-        // POST api/<AutomatedTestsController>
+        // POST api/AutomatedTests
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] ClientDTO newClient)
+        {
+            _clientService.AddClient(newClient);
+        }
+
+        // PUT api/Client/5
+        [HttpPut("{registrationNumber}")]
+        public void Put(string registrationNumber, [FromBody] string value)
         {
         }
 
-        // PUT api/<AutomatedTestsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // DELETE api/AutomatedTests/5
+        [HttpDelete()]
+        public void Delete()
         {
-        }
-
-        // DELETE api/<AutomatedTestsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            _clientService.RemoveForTestsAUT();
         }
     }
 }

@@ -20,6 +20,8 @@ namespace Services.Services
 
         void Remove(ClientDTO obj);
 
+        void RemoveForTestsAUT();
+
         void Dispose();
     }
     

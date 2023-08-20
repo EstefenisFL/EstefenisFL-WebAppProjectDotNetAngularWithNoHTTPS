@@ -24,44 +24,61 @@ namespace ProjectWebData.Repositories
         {
             try
             {
-                _context.Set<ClientDTO>().Add(obj);
-                _context.SaveChanges();
-
+                if (obj.Option == 2)
+                {
+                    var countInMemoryDataBase = GetAllClients();
+                    if (countInMemoryDataBase.Count() < 3)
+                    {
+                        AddClientForTestsAUT(obj);
+                    }
+                }
+                else
+                {
+                    _context.Set<ClientDTO>().Add(obj);
+                    _context.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
         public virtual IEnumerable<ClientDTO> GetAllClients()
         {
-            return _context.Set<ClientDTO>().ToList();
+            var countInMemoryDataBase = _contextTest.Set<ClientDTO>().ToList();
+            if (countInMemoryDataBase.Count() == 0)
+            {
+                return _context.Set<ClientDTO>().ToList();
+            }
+            else
+            {
+                return countInMemoryDataBase;
+            }
+
         }
 
         //<===========Usar _contextTest apenas para testes automatizados===========>
-        //public virtual IEnumerable<ClientDTO> GetAllClients()
-        //{
-        //var clients = _contextTest.GetDataBase();
-        //if (_contextTest.Set<ClientDTO>().ToList().Count == 0)
-        //{                
-        //    AddDataInContext(clients);
-        //}
-        //else
-        //{
-        //    RemoveDataInContext(clients);
-        //}
-        //return _contextTest.Set<ClientDTO>().ToList();
-        //}
-        //public void AddDataInContext(List<ClientDTO> clients)
-        //{
-        //    _context.AddRange(clients);
-        //    _context.SaveChanges();
-        //}
-        //public void RemoveDataInContext(List<ClientDTO> clients)
-        //{
-        //    _context.RemoveRange(clients);
-        //    _context.SaveChanges();
-        //}
+        public void AddClientForTestsAUT(ClientDTO client)
+        {
+            ClientDTO newClientEntity = new ClientDTO();
+            newClientEntity.Name = client.Name;
+            newClientEntity.RegistrationNumber = client.RegistrationNumber;
+            newClientEntity.PhoneNumber = client.PhoneNumber;
+            newClientEntity.CEP = client.CEP;
+            newClientEntity.State = client.State;
+            newClientEntity.City = client.City;
+
+            _contextTest.Add(newClientEntity);
+            _contextTest.SaveChanges();
+        }
+        public void RemoveClientForTestsAUT()
+        {
+            var listOfClients = _contextTest.Set<ClientDTO>().ToList();
+            if (listOfClients.Count() != 0)
+            {
+                _contextTest.RemoveRange();
+                _contextTest.SaveChanges();
+            }
+        }
     }
 }

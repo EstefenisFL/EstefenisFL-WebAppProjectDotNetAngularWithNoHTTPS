@@ -40,5 +40,9 @@ namespace Services.Services
         {
             _repositoryClient.Remove(obj);
         }
+        public void RemoveForTestsAUT()
+        {
+            _repositoryClient.RemoveClientForTestsAUT();
+        }
     }
 }
