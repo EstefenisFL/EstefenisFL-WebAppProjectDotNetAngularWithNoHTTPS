@@ -21,8 +21,7 @@ namespace AutomatedTest.Steps
         {
             IServiceCollection services = new ServiceCollection();
             services.AddHttpClient("ApiTestClient");
-            _httpClient = new HttpClient();
-                       
+            _httpClient = new HttpClient();                       
         }
     }
 }

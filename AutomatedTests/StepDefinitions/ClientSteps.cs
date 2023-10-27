@@ -56,11 +56,15 @@ namespace AutomatedTest.Steps
         {
             NEWCLIENT.City = city;
         }
-
+        [Given("the option is (.*)")]
+        public void GivenIWantToCreateNewClientWithOption(int option)
+        {
+            NEWCLIENT.Option = option;
+        }
         [When(@"the object for newClient was created")]
         public async Task GoingToCreateClient()
         {
-            var requestMessage = new HttpRequestMessage(HttpMethod.Post, string.Concat(HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT));
+            var requestMessage = new HttpRequestMessage(HttpMethod.Post, string.Concat(new string[] { HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT }));
             requestMessage.Content = new StringContent(JsonConvert.SerializeObject(NEWCLIENT), Encoding.UTF8, Application.Json);
             requestMessage.Headers.Add("Accept", "application/json");
             var response = await _httpClient.SendAsync(requestMessage);
@@ -114,11 +118,11 @@ namespace AutomatedTest.Steps
         {
             CLIENTFORUPDATEREMOVE.CEP = cep;
         }
-        [When(@"the values for update Client  was catched")]
+        [When(@"the values for update Client was catched")]
         public async Task WhenTheValuesToUpdatedWasCatched()
         {
 
-            string uriFull = $"{string.Concat(HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT)}/{CLIENTFORUPDATEREMOVE.Id}";
+            string uriFull = string.Concat(new string[] { HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT, "/", CLIENTFORUPDATEREMOVE.Id.ToString()});
             var requestMessage = new HttpRequestMessage(HttpMethod.Put, uriFull);
             requestMessage.Content = new StringContent(JsonConvert.SerializeObject(NEWCLIENT), Encoding.UTF8, Application.Json);
             requestMessage.Headers.Add("Accept", "application/json");
@@ -137,7 +141,7 @@ namespace AutomatedTest.Steps
         [Given("I want to delete a specific client")]
         public async Task GivenIWantToDeleteClientWithNewCep()
         {
-            string uriFull = $"{string.Concat(HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT)}/{CLIENTFORUPDATEREMOVE.Id}";
+            string uriFull = $"{string.Concat(HOST_API_LOCAL_TESTS, ACCESS_API_ENDPOINT)}/1";
             var requestMessage = new HttpRequestMessage(HttpMethod.Delete, uriFull);
             requestMessage.Headers.Add("Accept", "application/json");
             var response = await _httpClient.SendAsync(requestMessage);

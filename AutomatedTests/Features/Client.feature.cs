@@ -93,7 +93,7 @@ namespace AutomatedTests.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void CreateCLients(string name, string phoneNumber, string cEP, string registrationNumber, string state, string city, string[] exampleTags)
+        public virtual void CreateCLients(string name, string phoneNumber, string cEP, string registrationNumber, string state, string city, string option, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "CreateClients"};
@@ -109,6 +109,7 @@ namespace AutomatedTests.Features
             argumentsOfScenario.Add("RegistrationNumber", registrationNumber);
             argumentsOfScenario.Add("state", state);
             argumentsOfScenario.Add("city", city);
+            argumentsOfScenario.Add("option", option);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("CreateCLients", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -149,9 +150,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("the city is {0}", city), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
- testRunner.When("the object for newClient was created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("the option is {0}", option), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
+ testRunner.When("the object for newClient was created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 15
  testRunner.Then("I verify if the status code for this operation request is: 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -170,10 +174,11 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RegistrationNumber", "86487197041")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state", "Ceará")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Fortaleza")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:option", "2")]
         public virtual void CreateCLients_Estefenis()
         {
 #line 6
-this.CreateCLients("Estêfenis", "85999665587", "60822230", "86487197041", "Ceará", "Fortaleza", ((string[])(null)));
+this.CreateCLients("Estêfenis", "85999665587", "60822230", "86487197041", "Ceará", "Fortaleza", "2", ((string[])(null)));
 #line hidden
         }
         
@@ -189,10 +194,11 @@ this.CreateCLients("Estêfenis", "85999665587", "60822230", "86487197041", "Cear
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RegistrationNumber", "71038696003")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state", "Ceará")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Canindé")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:option", "2")]
         public virtual void CreateCLients_Maria()
         {
 #line 6
-this.CreateCLients("Maria", "85999999905", "60820240", "71038696003", "Ceará", "Canindé", ((string[])(null)));
+this.CreateCLients("Maria", "85999999905", "60820240", "71038696003", "Ceará", "Canindé", "2", ((string[])(null)));
 #line hidden
         }
         
@@ -208,10 +214,11 @@ this.CreateCLients("Maria", "85999999905", "60820240", "71038696003", "Ceará", 
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RegistrationNumber", "12815644002")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:state", "Ceará")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:city", "Porto de Galinhas")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:option", "2")]
         public virtual void CreateCLients_Pedro()
         {
 #line 6
-this.CreateCLients("Pedro", "85998989865", "60820220", "12815644002", "Ceará", "Porto de Galinhas", ((string[])(null)));
+this.CreateCLients("Pedro", "85998989865", "60820220", "12815644002", "Ceará", "Porto de Galinhas", "2", ((string[])(null)));
 #line hidden
         }
         
@@ -227,7 +234,7 @@ this.CreateCLients("Pedro", "85998989865", "60820220", "12815644002", "Ceará", 
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("ResultCount", resultCount);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GetCLients", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -247,10 +254,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 26
  testRunner.When("going to bring data from DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 26
+#line 27
  testRunner.Then(string.Format("verify if number of records is {0}", resultCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -266,7 +273,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:ResultCount", "3")]
         public virtual void GetCLients_3()
         {
-#line 24
+#line 25
 this.GetCLients("3", ((string[])(null)));
 #line hidden
         }
@@ -284,7 +291,7 @@ this.GetCLients("3", ((string[])(null)));
             argumentsOfScenario.Add("PhoneNumber", phoneNumber);
             argumentsOfScenario.Add("CEP", cEP);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("UpdateClient", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 34
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -304,19 +311,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 35
+#line 36
  testRunner.Given("I want to update a client", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 36
+#line 37
  testRunner.And(string.Format("the phoneNumber for update is {0}", phoneNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 38
  testRunner.And(string.Format("the cep for update is {0}", cEP), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
- testRunner.When("the values for update Client  was catched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 39
+ testRunner.When("the values for update Client was catched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 40
  testRunner.Then("I verify if the status code for update operation request is: 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -333,7 +340,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CEP", "60822001")]
         public virtual void UpdateClient_85999665587()
         {
-#line 34
+#line 35
 this.UpdateClient("85999665587", "60822001", ((string[])(null)));
 #line hidden
         }
@@ -349,7 +356,7 @@ this.UpdateClient("85999665587", "60822001", ((string[])(null)));
                     "Deleteclient"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deleteclient", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 47
+#line 48
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -369,10 +376,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 48
+#line 49
  testRunner.Given("I want to delete a specific client", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 49
+#line 50
  testRunner.Then("I verify if the status code for delete operation request is: 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

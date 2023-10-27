@@ -10,14 +10,15 @@ Scenario: CreateCLients
 	And the registrationNumber is <RegistrationNumber>
 	And the state is <state>
 	And the city is <city>
+	And the option is <option>
 	When the object for newClient was created
 	Then I verify if the status code for this operation request is: 200
 
 Examples:
-	| Name      | PhoneNumber | CEP      | RegistrationNumber | state | city              |
-	| Estêfenis | 85999665587 | 60822230 | 86487197041        | Ceará | Fortaleza         |
-	| Maria     | 85999999905 | 60820240 | 71038696003        | Ceará | Canindé           |
-	| Pedro     | 85998989865 | 60820220 | 12815644002        | Ceará | Porto de Galinhas |
+	| Name      | PhoneNumber | CEP      | RegistrationNumber | state | city              | option |
+	| Estêfenis | 85999665587 | 60822230 | 86487197041        | Ceará | Fortaleza         | 2      |
+	| Maria     | 85999999905 | 60820240 | 71038696003        | Ceará | Canindé           | 2      |
+	| Pedro     | 85998989865 | 60820220 | 12815644002        | Ceará | Porto de Galinhas | 2      |
 
 
 @GetClients
@@ -35,7 +36,7 @@ Scenario: UpdateClient
 	Given I want to update a client
 	And the phoneNumber for update is <PhoneNumber>
 	And the cep for update is <CEP>
-	When the values for update Client  was catched
+	When the values for update Client was catched
 	Then I verify if the status code for update operation request is: 200 
 
 Examples:
