@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace ProjectWebData.Repositories.Interfaces
 {
-    public interface IRepositoryItem : IRepositoryBase<OrderItemDTO>
+    public interface IRepositoryItem : IRepositoryBase<ItemDTO>
     {
+        IEnumerable<ItemDTO> GetAllItens();
+        void AddItem(ItemDTO newItem);
     }
 }

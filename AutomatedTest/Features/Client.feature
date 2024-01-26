@@ -4,9 +4,9 @@ Feature: Client
 
 @GetClients
 Scenario: GetCLients
-	When the retrieval is done
+	When going to bring data from DB
 	Then verify if number of records is <ResultCount>
 
 	Examples:
-	| ResultCount |
-	| 5           |
+		| ResultCount |
+		| 5           |

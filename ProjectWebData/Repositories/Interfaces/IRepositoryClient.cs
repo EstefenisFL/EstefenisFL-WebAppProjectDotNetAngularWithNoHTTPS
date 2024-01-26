@@ -11,5 +11,7 @@ namespace ProjectWebData.Repositories.Interfaces
     {
         IEnumerable<ClientDTO> GetAllClients();
         void AddClient(ClientDTO newClient);
+        void RemoveClientForTestsAUT(int id);
+        void UpdateForTestAUT (ClientDTO obj);
     }
 }

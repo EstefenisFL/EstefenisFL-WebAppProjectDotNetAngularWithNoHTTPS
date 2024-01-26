@@ -14,70 +14,82 @@ namespace ProjectWebData.Repositories
     public class RepositoryClient : RepositoryBase<ClientDTO>, IRepositoryClient
     {
         private readonly ApplicationContext _context;
-        public RepositoryClient(ApplicationContext context) : base(context)
+        private readonly SQLiteContextTests _contextTest;
+        public RepositoryClient(ApplicationContext context, SQLiteContextTests contextTest) : base(context)
         {
-               _context = context;
+            _context = context;
+            _contextTest = contextTest;
         }
         public virtual void AddClient(ClientDTO obj)
         {
             try
             {
-                _context.Set<ClientDTO>().Add(obj);
-                _context.SaveChanges();
-
+                if (obj.Option == 2)
+                {
+                    var countInMemoryDataBase = GetAllClients();
+                    if (countInMemoryDataBase.Count() < 3)
+                    {
+                        AddClientForTestsAUT(obj);
+                    }
+                }
+                else
+                {
+                    _context.Set<ClientDTO>().Add(obj);
+                    _context.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
-
-        public virtual ClientDTO GetById(int id)
-        {
-            return _context.Set<ClientDTO>().Find(id);
-        }
-
         public virtual IEnumerable<ClientDTO> GetAllClients()
         {
-            return _context.Set<ClientDTO>().ToList();
-        }
-
-        public virtual void Update(ClientDTO obj)
-        {
-
-            try
+            var countInMemoryDataBase = _contextTest.Set<ClientDTO>().ToList();
+            if (countInMemoryDataBase.Count() == 0)
             {
-                _context.Entry(obj).State = EntityState.Modified;
-                _context.SaveChanges();
-
+                return _context.Set<ClientDTO>().ToList();
             }
-            catch (Exception ex)
+            else
             {
-
-                throw ex;
-            }
-
-
-        }
-
-        public virtual void Remove(ClientDTO obj)
-        {
-            try
-            {
-                _context.Set<ClientDTO>().Remove(obj);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
+                return countInMemoryDataBase;
             }
         }
 
-        public virtual void Dispose()
+        //<===========Usar _contextTest apenas para testes automatizados===========>
+        public void AddClientForTestsAUT(ClientDTO client)
         {
-            _context.Dispose();
+            ClientDTO newClientEntity = new ClientDTO();
+            newClientEntity.Name = client.Name;
+            newClientEntity.RegistrationNumber = client.RegistrationNumber;
+            newClientEntity.PhoneNumber = client.PhoneNumber;
+            newClientEntity.CEP = client.CEP;
+            newClientEntity.State = client.State;
+            newClientEntity.City = client.City;
+
+            _contextTest.Add(newClientEntity);
+            _contextTest.SaveChanges();
+        }
+        public void RemoveClientForTestsAUT(int id)
+        {
+            var listOfClients = _contextTest.Set<ClientDTO>().ToList();
+            if (listOfClients.Count() != 0)
+            {
+                foreach (ClientDTO client in listOfClients)
+                {
+                    if (client.Id == id)
+                    {
+                        _contextTest.Remove(client);
+                        _contextTest.SaveChanges();
+                    }
+                }
+
+            }
+        }
+        public void UpdateForTestAUT(ClientDTO obj)
+        {
+            _contextTest.Update(obj);
+            _contextTest.SaveChanges();
         }
     }
 }

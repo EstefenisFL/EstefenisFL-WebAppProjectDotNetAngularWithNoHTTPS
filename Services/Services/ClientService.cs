@@ -16,7 +16,7 @@ namespace Services.Services
         {
             _repositoryClient = repositoryClient;
         }
-        
+
         public void AddClient(ClientDTO newClient)
         {
             _repositoryClient.AddClient(newClient);
@@ -26,7 +26,7 @@ namespace Services.Services
         {
             return _repositoryClient.GetById(id);
         }
-        public IEnumerable<ClientDTO> FindClients()
+        public IEnumerable<ClientDTO> FindAllClients()
         {
             return _repositoryClient.GetAllClients();
         }
@@ -35,10 +35,19 @@ namespace Services.Services
         {
             _repositoryClient.Update(obj);
         }
-        override
-        public void Remove(ClientDTO obj)
+
+        public void UpdateForTestsAUT(ClientDTO obj)
         {
-            _repositoryClient.Remove(obj);
+            _repositoryClient.UpdateForTestAUT(obj);
+        }        
+        public void RemoveClient(int id)
+        {
+            var client = _repositoryClient.GetById(id);
+            _repositoryClient.Remove(client);
+        }
+        public void RemoveForTestsAUT(int id)
+        {
+            _repositoryClient.RemoveClientForTestsAUT(id);
         }
     }
 }
