@@ -14,11 +14,15 @@ namespace Services.Services
 
         ClientDTO GetById(int id);
 
-        IEnumerable<ClientDTO> FindClients();
+        IEnumerable<ClientDTO> FindAllClients();
 
         void Update(ClientDTO obj);
 
-        void Remove(ClientDTO obj);
+        void UpdateForTestsAUT(ClientDTO obj);
+
+        void RemoveClient(int id);
+
+        void RemoveForTestsAUT(int id);
 
         void Dispose();
     }

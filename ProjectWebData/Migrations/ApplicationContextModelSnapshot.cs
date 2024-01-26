@@ -22,7 +22,7 @@ namespace ProjectWebData.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Client", b =>
+            modelBuilder.Entity("Domain.Models.ClientDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,8 +43,15 @@ namespace ProjectWebData.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(80)");
 
+                    b.Property<int?>("Option")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("CHAR(11)");
+
+                    b.Property<string>("RegistrationNumber")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(14)");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -58,7 +65,42 @@ namespace ProjectWebData.Migrations
                     b.ToTable("Clientes", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Order", b =>
+            modelBuilder.Entity("Domain.Models.ItemDTO", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BarCode")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(14)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("VARCHAR(60)");
+
+                    b.Property<int?>("OrderDTOId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("Value")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderDTOId");
+
+                    b.ToTable("Produtos", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.OrderDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -94,7 +136,7 @@ namespace ProjectWebData.Migrations
                     b.ToTable("Pedidos", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.OrderItem", b =>
+            modelBuilder.Entity("Domain.Models.OrderItemDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -128,39 +170,16 @@ namespace ProjectWebData.Migrations
                     b.ToTable("PedidoItens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Product", b =>
+            modelBuilder.Entity("Domain.Models.ItemDTO", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BarCode")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(14)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("VARCHAR(60)");
-
-                    b.Property<string>("ProductType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal>("Value")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Produtos", (string)null);
+                    b.HasOne("Domain.Models.OrderDTO", null)
+                        .WithMany("Itens")
+                        .HasForeignKey("OrderDTOId");
                 });
 
-            modelBuilder.Entity("Domain.Order", b =>
+            modelBuilder.Entity("Domain.Models.OrderDTO", b =>
                 {
-                    b.HasOne("Domain.Client", "Client")
+                    b.HasOne("Domain.Models.ClientDTO", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -169,15 +188,15 @@ namespace ProjectWebData.Migrations
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("Domain.OrderItem", b =>
+            modelBuilder.Entity("Domain.Models.OrderItemDTO", b =>
                 {
-                    b.HasOne("Domain.Order", "Order")
-                        .WithMany("Itens")
+                    b.HasOne("Domain.Models.OrderDTO", "Order")
+                        .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Product", "Product")
+                    b.HasOne("Domain.Models.ItemDTO", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -188,7 +207,7 @@ namespace ProjectWebData.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Domain.Order", b =>
+            modelBuilder.Entity("Domain.Models.OrderDTO", b =>
                 {
                     b.Navigation("Itens");
                 });

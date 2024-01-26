@@ -9,5 +9,7 @@ namespace ProjectWebData.Repositories.Interfaces
 {
     public interface IRepositoryOrder : IRepositoryBase<OrderDTO>
     {
+        IEnumerable<OrderDTO> GetAllOrders();
+        void AddOrder(OrderDTO newOrder);
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Mvc;
+using Services.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,33 +10,41 @@ namespace WebAppAPINoHttps.Controllers
     [ApiController]
     public class ItemController : ControllerBase
     {
-        // GET: api/<ItemController>
+        private readonly ILogger<ItemController> _logger;
+        private readonly IItemService _itemService;
+
+        public ItemController(ILogger<ItemController> logger, IItemService itemService)
+        {
+            _logger = logger;
+            _itemService = itemService;
+        }
+        // GET: api/Item
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<ItemDTO> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            return _itemService.FindAllItens();
         }
 
-        // GET api/<ItemController>/5
+        // GET api/Item/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ItemDTO Get(int id)
         {
-            return "value";
+            return _itemService.GetById(id);
         }
 
-        // POST api/<ItemController>
+        // POST api/Item
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<ItemController>/5
+        // PUT api/Item/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<ItemController>/5
+        // DELETE api/Item/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
