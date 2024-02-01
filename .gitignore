@@ -475,3 +475,45 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# My files
+.vs/ProjectEvaluation/webappapinohttps.metadata.v7.bin
+        .vs/ProjectEvaluation/webappapinohttps.projects.v7.bin
+        .vs/WebAppAPINoHttps/DesignTimeBuild/.dtbcache.v2
+        .vs/WebAppAPINoHttps/v17/.futdcache.v2
+        .vs/WebAppAPINoHttps/v17/.suo
+        AutomatedTests/obj/AutomatedTests.csproj.nuget.dgspec.json
+        AutomatedTests/obj/Debug/net6.0/AutomatedTests.GeneratedMSBuildEditorConfig.editorconfig
+        AutomatedTests/obj/Debug/net6.0/AutomatedTests.assets.cache
+        AutomatedTests/obj/Debug/net6.0/AutomatedTests.csproj.AssemblyReference.cache
+        AutomatedTests/obj/project.assets.json
+        AutomatedTests/obj/project.nuget.cache
+        Domain/obj/Debug/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+        Domain/obj/Debug/net6.0/Domain.assets.cache
+        Domain/obj/Debug/net6.0/Domain.csproj.AssemblyReference.cache
+        Domain/obj/Domain.csproj.nuget.dgspec.json
+        Domain/obj/project.assets.json
+        Domain/obj/project.nuget.cache
+        ProjectWebData/obj/Debug/net6.0/ProjectWebData.GeneratedMSBuildEditorConfig.editorconfig
+        ProjectWebData/obj/Debug/net6.0/ProjectWebData.assets.cache
+        ProjectWebData/obj/Debug/net6.0/ProjectWebData.csproj.AssemblyReference.cache
+        ProjectWebData/obj/ProjectWebData.csproj.nuget.dgspec.json
+        ProjectWebData/obj/project.assets.json
+        ProjectWebData/obj/project.nuget.cache
+        Services/obj/Debug/net6.0/Services.GeneratedMSBuildEditorConfig.editorconfig
+        Services/obj/Debug/net6.0/Services.assets.cache
+        Services/obj/Debug/net6.0/Services.csproj.AssemblyReference.cache
+        Services/obj/Services.csproj.nuget.dgspec.json
+        Services/obj/project.assets.json
+        Services/obj/project.nuget.cache
+        Utils/obj/Debug/net6.0/Utils.GeneratedMSBuildEditorConfig.editorconfig
+        Utils/obj/Debug/net6.0/Utils.assets.cache
+        Utils/obj/Utils.csproj.nuget.dgspec.json
+        Utils/obj/project.assets.json
+        Utils/obj/project.nuget.cache
+        WebAppAPINoHttps/obj/Debug/net6.0/WebAppAPINoHttps.GeneratedMSBuildEditorConfig.editorconfig
+        WebAppAPINoHttps/obj/Debug/net6.0/WebAppAPINoHttps.assets.cache
+        WebAppAPINoHttps/obj/Debug/net6.0/WebAppAPINoHttps.csproj.AssemblyReference.cache
+        WebAppAPINoHttps/obj/WebAppAPINoHttps.csproj.nuget.dgspec.json
+        WebAppAPINoHttps/obj/project.assets.json
+        WebAppAPINoHttps/obj/project.nuget.cache
