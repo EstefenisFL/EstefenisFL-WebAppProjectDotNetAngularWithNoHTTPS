@@ -475,16 +475,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-## My itens
- ProjectWebData/obj/Debug/net6.0/ProjectWebData.GeneratedMSBuildEditorConfig.editorconfig
- ProjectWebData/obj/Debug/net6.0/ProjectWebData.assets.cache
- ProjectWebData/obj/Debug/net6.0/ProjectWebData.csproj.AssemblyReference.cache
- Services/obj/Debug/net6.0/Services.GeneratedMSBuildEditorConfig.editorconfig
- Services/obj/Debug/net6.0/Services.assets.cache
- Services/obj/Debug/net6.0/Services.csproj.AssemblyReference.cache
- Utils/obj/Debug/net6.0/Utils.GeneratedMSBuildEditorConfig.editorconfig
- Utils/obj/Debug/net6.0/Utils.assets.cache
- WebAppAPINoHttps/obj/Debug/net6.0/WebAppAPINoHttps.GeneratedMSBuildEditorConfig.editorconfig
- WebAppAPINoHttps/obj/Debug/net6.0/WebAppAPINoHttps.assets.cache
- WebAppAPINoHttps/obj/Debug/net6.0/WebAppAPINoHttps.csproj.AssemblyReference.cache
