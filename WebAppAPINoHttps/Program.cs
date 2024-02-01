@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 builder.Services.AddDbContext<ApplicationContext>(options => 
-options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerDatabase"), providerOptions => providerOptions.EnableRetryOnFailure()));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServerDatabase"), providerOptions => providerOptions.EnableRetryOnFailure()));
 
 builder.Services.AddCors((setup) =>
 {

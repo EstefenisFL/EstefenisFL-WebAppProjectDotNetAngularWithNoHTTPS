@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AutomatedTests
-build_property.ProjectDir = C:\Users\Estef\source\repos\back_WebAppAPINoHttps_independent\AutomatedTests\
+build_property.ProjectDir = C:\Users\Estef\source\repos\WebAppProjectDotNetAngular\AutomatedTests\

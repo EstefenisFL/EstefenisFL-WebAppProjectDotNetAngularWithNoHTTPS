@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\AutomatedTests\\AutomatedTests.csproj": {}
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\AutomatedTests\\AutomatedTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\AutomatedTests\\AutomatedTests.csproj": {
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\AutomatedTests\\AutomatedTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\AutomatedTests\\AutomatedTests.csproj",
+        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\AutomatedTests\\AutomatedTests.csproj",
         "projectName": "AutomatedTests",
-        "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\AutomatedTests\\AutomatedTests.csproj",
+        "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\AutomatedTests\\AutomatedTests.csproj",
         "packagesPath": "C:\\Users\\Estef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\AutomatedTests\\obj\\",
+        "outputPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\AutomatedTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,11 +30,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj"
               }
             }
           }
@@ -46,8 +46,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "FluentAssertions": {
               "target": "Package",
@@ -60,6 +60,14 @@
             "MSTest.TestFramework": {
               "target": "Package",
               "version": "[2.2.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -94,14 +102,14 @@
         }
       }
     },
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj": {
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Estef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -112,7 +120,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -120,11 +128,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj"
               }
             }
           }
@@ -136,9 +144,13 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -152,6 +164,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[7.0.0, )"
             }
@@ -176,14 +192,14 @@
         }
       }
     },
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj": {
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj",
+        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj",
         "projectName": "ProjectWebData",
-        "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj",
+        "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj",
         "packagesPath": "C:\\Users\\Estef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\obj\\",
+        "outputPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -194,7 +210,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -202,14 +218,14 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj"
               }
             }
           }
@@ -221,8 +237,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -231,6 +247,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.143, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -261,6 +281,10 @@
               "version": "[7.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[7.0.0, )"
             },
@@ -301,14 +325,14 @@
         }
       }
     },
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj": {
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Estef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\obj\\",
+        "outputPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -319,7 +343,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -327,11 +351,11 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj"
               }
             }
           }
@@ -343,8 +367,18 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -365,14 +399,14 @@
         }
       }
     },
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj": {
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\Utils.csproj",
+        "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\Utils.csproj",
         "packagesPath": "C:\\Users\\Estef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Utils\\obj\\",
+        "outputPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -383,7 +417,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -391,8 +425,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -403,9 +437,13 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -421,6 +459,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -443,14 +485,14 @@
         }
       }
     },
-    "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj": {
+    "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj",
+        "projectUniqueName": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj",
         "projectName": "WebAppAPINoHttps",
-        "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj",
+        "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\WebAppAPINoHttps\\WebAppAPINoHttps.csproj",
         "packagesPath": "C:\\Users\\Estef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\WebAppAPINoHttps\\obj\\",
+        "outputPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\WebAppAPINoHttps\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -461,7 +503,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -470,17 +512,17 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Domain\\Domain.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\ProjectWebData\\ProjectWebData.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\ProjectWebData\\ProjectWebData.csproj"
               },
-              "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\Estef\\source\\repos\\back_WebAppAPINoHttps_independent\\Services\\Services.csproj"
+              "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\Estef\\source\\repos\\WebAppProjectDotNetAngular\\Services\\Services.csproj"
               }
             }
           }
@@ -492,8 +534,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -502,6 +544,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.0.143, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -528,6 +574,10 @@
               "version": "[7.0.0, )"
             },
             "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
               "version": "[7.0.0, )"
             },

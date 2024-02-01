@@ -12,8 +12,10 @@ namespace Domain.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string? Name { get; set; }
+        public string? Name { get; set; }        
+        [EmailAddress]
         [Required]
+        public string? Email { get; set; }
         public string? RegistrationNumber { get; set; }
         public string? PhoneNumber { get; set; }
         public string? CEP { get; set; }
